@@ -101,7 +101,7 @@ class QRStorageBucket:
             raise BucketNameNotSetException
             
         payload = {"bucket_name": current_working_bucket}
-        response = requests.get(
+        response = QREnv.session().get(
                     url=self._gen_api_base_uri(),
                     headers=self.gen_headers(),
                     params=payload
@@ -135,7 +135,7 @@ class QRStorageBucket:
         }
 
         try:
-            with requests.post(url, json=data, headers=headers) as response:
+            with QREnv.session().post(url, json=data, headers=headers) as response:
                 if response.status_code == 200:
                     json_response = response.json()
                     return json_response['access']
@@ -168,7 +168,7 @@ class QRStorageBucket:
             download_link = file_url
         
         try:
-            with requests.get(download_link, headers=headers) as response:
+            with QREnv.session().get(download_link, headers=headers) as response:
                 response.raise_for_status()
                 # content_type = response.headers.get('Content-Type', '')
                 # extension = content_type.split('/')[-1]
@@ -198,7 +198,7 @@ class QRStorageBucket:
             "file_display_name": filename_to_upload
         }
 
-        response = requests.post(
+        response = QREnv.session().post(
             url=base_url,
             headers=self.gen_headers(),
             data=bucket_data_dictionary,
@@ -212,7 +212,7 @@ class QRStorageBucket:
 
     def list_all_files(self):
         base_url = self._gen_api_base_uri(type='bucket_data')
-        response = requests.get(
+        response = QREnv.session().get(
             url=base_url,
             headers=self.gen_headers()
             )
@@ -228,7 +228,7 @@ class QRStorageBucket:
         base_url = self._gen_api_base_uri(type="bucket_data")
         file_search_url = urllib.parse.urljoin(base_url, f'?file_name={find_filename}')
 
-        response = requests.get(
+        response = QREnv.session().get(
             url=file_search_url,
             headers=self.gen_headers()
             )
@@ -250,7 +250,7 @@ class QRStorageBucket:
                 "file_display_name": new_file_name,
                 "action": action
             }
-        response = requests.patch(url=full_url, headers=self.gen_headers(), data=data)
+        response = QREnv.session().patch(url=full_url, headers=self.gen_headers(), data=data)
         if response.status_code == 200:
             file_operation = response.json()
         else:

@@ -18,7 +18,7 @@ class _LaxSSLAdapter(HTTPAdapter):
 
 class QREnv:
 
-    BOT_NAME = 'QRBot'             # Name of the bot. Will be used in email notifications
+    BOT_NAME = 'BotName'           # Name of the bot. Will be used in email notifications
     
     PLATFORM_VERSION = 2            # v1 currently in NCell, Prime, Civil, NMB. Rest are on v2     
     NO_PLATFORM = True
@@ -42,8 +42,8 @@ class QREnv:
 
     # Platform URLS
     URL_LOCAL = "http://127.0.0.1:8000/api/v1"                  # Use for locahost
-    URL_QR_DEV_URL = "http://13.58.117.7:8000/api/v1"           # Use for internal dev server                            
-    URL_QR_UAT_URL = "http://18.217.209.236/api/v1"             # Use for internal uat server                                 
+    URL_QR_DEV_URL = ""                                          # Use for internal dev server
+    URL_QR_UAT_URL = ""                                          # Use for internal uat server
     URL_UAT_URL = ""                                            # Use for client uat server
     URL_PROD = ""                                               # Use for client production
 
@@ -56,8 +56,7 @@ class QREnv:
         ENV_PRODUCTION: URL_PROD
     }
 
-    # ENVIRONMENT = os.environ.get("ENVIRONMENT")
-    ENVIRONMENT = ENV_UAT
+    ENVIRONMENT = os.environ.get("ENVIRONMENT", ENV_LOCAL)
     
     try:
         BASE_URL = ENV_URL[ENVIRONMENT]
@@ -69,7 +68,7 @@ class QREnv:
     # Vault items are fetched. However, queues and storage buckets are only checked if they are accessible
     QUEUE_NAMES = []
     STORAGE_NAMES = []
-    VAULT_NAMES = ["qrbot_vault"]
+    VAULT_NAMES = []
 
     # Retrieved vault items are set in this dictionary
     VAULTS = {}

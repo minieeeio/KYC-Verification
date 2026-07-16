@@ -7,10 +7,10 @@ class DefaultComponent(QRComponent):
     def __init__(self):
         super().__init__()
 
-    def load_qrbot_vault(self):
-        self.qrvault = QREnv.VAULTS["qrbot_vault"]
-        self.user = self.qrvault.get("qrbot_user")
-        self.password = self.qrvault.get("qrbot_password")
+    def load_vault(self):
+        self.qrvault = QREnv.VAULTS[QREnv.VAULT_NAMES[0]]
+        self.user = self.qrvault.get("user")
+        self.password = self.qrvault.get("password")
 
     def login(self):
         try:

@@ -3,11 +3,8 @@ from qrlib.QRDecorators import run_item
 from qrlib.QRRunItem import QRRunItem
 from components.DefaultComponent import DefaultComponent
 
-class PaymentKnockoffProcess(QRProcess):
-    """Main process orchestration for the PaymentKnockoff bot.
-
-    Run Item Granularity: one run item = one distributor account posted via FB05.
-    """
+class DefaultProcess(QRProcess):
+    """Main process orchestration."""
 
     def __init__(self) -> None:
         super().__init__()

@@ -1,5 +1,19 @@
 from robot.libraries.BuiltIn import BuiltIn
 import os
+import ssl
+import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.ssl_ import create_urllib3_context
+
+
+class _LaxSSLAdapter(HTTPAdapter):
+    # ponytail: bypasses ASN.1 parse errors from corporate SSL inspection proxies
+    def init_poolmanager(self, *args, **kwargs):
+        ctx = create_urllib3_context()
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+        kwargs['ssl_context'] = ctx
+        super().init_poolmanager(*args, **kwargs)
 
 
 class QREnv:
@@ -60,4 +74,9 @@ class QREnv:
     # Retrieved vault items are set in this dictionary
     VAULTS = {}
 
+    @staticmethod
+    def session() -> requests.Session:
+        s = requests.Session()
+        s.mount('https://', _LaxSSLAdapter())
+        return s
 

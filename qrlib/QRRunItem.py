@@ -74,10 +74,9 @@ class QRRunItem:
 
                 runitem_url = f"{QREnv.BASE_URL}/runitems-request/{QREnv.IDENTIFIER}/"
                 # Post runitem
-                response = requests.post(
+                response = QREnv.session().post(
                     url=runitem_url,
                     json=run_item_dict,
-                    verify=QREnv.VERIFY_SSL
                 )
                 if response.status_code == 200:
                     return True

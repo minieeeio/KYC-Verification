@@ -39,11 +39,10 @@ class QRVault:
                    'Accept': 'application/json'}
 
         vault_url = f"{QREnv.BASE_URL}/vaultdata-request/{QREnv.IDENTIFIER}/"
-        resp = requests.get(
+        resp = QREnv.session().get(
             url=vault_url,
             json=data_to_send,
             headers=headers,
-            verify=QREnv.VERIFY_SSL,
         )
         if resp.status_code == 200:
             received = resp.json()
@@ -227,11 +226,10 @@ class CustomVault(object):
             }
             headers = {'content-type': 'application/json',
                        'Accept': 'application/json'}
-            resp = requests.get(
+            resp = QREnv.session().get(
                 self.URL,
                 json=data_to_send,
                 headers=headers,
-                verify=False
             )
             if resp.status_code == 200:
                 received = resp.json()

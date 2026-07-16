@@ -25,7 +25,7 @@ class QRQueue:
             """
             uri = self.gen_uri() + f"/{self.name}/"
             headers = self.gen_headers()
-            response = requests.get(
+            response = QREnv.session().get(
                 url = uri,
                 headers=headers,
             )
@@ -91,7 +91,7 @@ class QRQueue:
         }
 
         try:
-            with requests.post(url, json=data, headers=headers) as response:
+            with QREnv.session().post(url, json=data, headers=headers) as response:
                 if response.status_code == 200:
                     json_response = response.json()
                     return json_response['access']
@@ -111,9 +111,8 @@ class QRQueue:
             # Hit api to get items. Create queueitems with the response
             token = self.portal_login()
             run_item.logger.info("token is -->", token)
-            response = requests.get(
+            response = QREnv.session().get(
             url = self.gen_uri(),
-            # headers=self.gen_headers(),
             headers = {
                 "Authorization": f"Bearer {token}"
             },
@@ -163,8 +162,8 @@ class QRQueue:
                 queue_item_json.pop('queue',None)
                 queue_item_list.append(queue_item_json)
 
-            response = requests.post(
-                uri=self.gen_uri(),
+            response = QREnv.session().post(
+                url=self.gen_uri(),
                 headers=self.gen_headers(),
                 json=queue_item_list
             )

@@ -65,7 +65,7 @@ class QRQueueItem():
     def post(self):
         json_data = self.dict()
         
-        response = requests.patch(
+        response = QREnv.session().patch(
             url=self.gen_uri(),
             json=json_data,
             headers=self.gen_headers()

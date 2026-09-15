@@ -1,8 +1,6 @@
 tasks:
   Run all tasks:
     shell: python -m robot --report NONE --outputdir output --logtitle "Task log" tasks.robot
-  # Test WhatsApp:
-  #   shell: python test_whatsapp.py
 
 condaConfigFile: conda.yaml
 artifactsDir: output

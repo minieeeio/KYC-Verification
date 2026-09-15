@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.9.13 on darwin)" generated="20260915 15:41:25.079" rpa="true" schemaversion="4">
+<suite id="s1" name="Tasks" source="/Users/ujjalshrestha/Downloads/Bot Starter Kit/tasks.robot">
+<test id="s1-t1" name="RPA Task" line="7">
+<kw name="Start" library="Bot">
+<doc>Set up platform components and run the process lifecycle.</doc>
+<msg timestamp="20260915 15:41:25.451" level="INFO">Logging in...</msg>
+<msg timestamp="20260915 15:41:25.451" level="INFO">Run Item: {'started_at': '2026-09-15 15:41:25', 'completed_at': '2026-09-15 15:41:25', 'status': 'Completed', 'report_data': {}, 'is_ticket': False, 'notification': {}}</msg>
+<msg timestamp="20260915 15:41:25.451" level="INFO">Test task</msg>
+<msg timestamp="20260915 15:41:25.451" level="INFO">Run Item: {'started_at': '2026-09-15 15:41:25', 'completed_at': '2026-09-15 15:41:25', 'status': 'Completed', 'report_data': {'test': 'a'}, 'is_ticket': True, 'notification': {}}</msg>
+<msg timestamp="20260915 15:41:25.451" level="INFO">Run Item: {'started_at': '2026-09-15 15:41:25', 'completed_at': '2026-09-15 15:41:25', 'status': 'Completed', 'report_data': {}, 'is_ticket': False, 'notification': {}}</msg>
+<msg timestamp="20260915 15:41:25.451" level="INFO">Run Item: {'started_at': '2026-09-15 15:41:25', 'completed_at': '2026-09-15 15:41:25', 'status': 'Completed', 'report_data': {}, 'is_ticket': False, 'notification': {}}</msg>
+<msg timestamp="20260915 15:41:25.451" level="INFO">Test task</msg>
+<msg timestamp="20260915 15:41:25.451" level="INFO">Run Item: {'started_at': '2026-09-15 15:41:25', 'completed_at': '2026-09-15 15:41:25', 'status': 'Completed', 'report_data': {'test': 'b'}, 'is_ticket': True, 'notification': {}}</msg>
+<msg timestamp="20260915 15:41:25.451" level="INFO">Run Item: {'started_at': '2026-09-15 15:41:25', 'completed_at': '2026-09-15 15:41:25', 'status': 'Completed', 'report_data': {}, 'is_ticket': False, 'notification': {}}</msg>
+<status status="PASS" starttime="20260915 15:41:25.450" endtime="20260915 15:41:25.451"/>
+</kw>
+<kw name="Teardown" library="Bot" type="TEARDOWN">
+<doc>Global teardown — always runs after start() regardless of errors.</doc>
+<msg timestamp="20260915 15:41:25.451" level="INFO">Logging out...</msg>
+<status status="PASS" starttime="20260915 15:41:25.451" endtime="20260915 15:41:25.451"/>
+</kw>
+<status status="PASS" starttime="20260915 15:41:25.450" endtime="20260915 15:41:25.452"/>
+</test>
+<doc>Template robot main suite.</doc>
+<status status="PASS" starttime="20260915 15:41:25.080" endtime="20260915 15:41:25.452"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tasks">Tasks</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

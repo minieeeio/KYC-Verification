@@ -1,3 +1,5 @@
+from typing import Any
+
 from qrlib.QRProcess import QRProcess
 from qrlib.QRDecorators import run_item
 from qrlib.QRRunItem import QRRunItem
@@ -30,7 +32,7 @@ class DefaultProcess(QRProcess):
         run_item.set_success()
 
     @run_item(is_ticket=True, post_success=True, post_error=True)
-    def execute_run_item(self, *args: Any, **kwargs: Any) -> None:
+    def execute_run_item(self, data: Any, **kwargs: Any) -> None:
         # Get run item created by decorator. Then notify to all components about new run item.
         run_item: QRRunItem = kwargs["run_item"]
         self.notify(run_item)
@@ -43,12 +45,11 @@ class DefaultProcess(QRProcess):
                 "step": "step",
             }
             self.logger.exception(
-                "step=execute_run_item status=failed customer_account=%s", account
+                "step=execute_run_item status=failed data=%s", data
             )
-            run_item.set_error()
-            return
+            raise
 
-        run_item.report_data["test"] = args[0]
+        run_item.report_data["test"] = data
         run_item.set_success()
 
     @run_item(is_ticket=False)
@@ -70,5 +71,5 @@ class DefaultProcess(QRProcess):
     def execute_run(self, **kwargs: Any) -> None:
         for data in self.data:
             self.before_run_item()
-            self.execute_run_item()
+            self.execute_run_item(data)
             self.after_run_item()

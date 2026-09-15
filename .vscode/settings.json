@@ -1,0 +1,9 @@
+{
+  "python.analysis.extraPaths": [
+    "/Users/ujjalshrestha/Downloads/Bot Starter Kit/keywords",
+    "/Users/ujjalshrestha/Downloads/Bot Starter Kit/libraries",
+    "/Users/ujjalshrestha/Downloads/Bot Starter Kit/variables",
+    "/Users/ujjalshrestha/Downloads/Bot Starter Kit/qrlib",
+    "/Users/ujjalshrestha/Downloads/Bot Starter Kit/app"
+  ]
+}

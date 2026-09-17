@@ -3,7 +3,17 @@ from typing import Any
 from qrlib.QRProcess import QRProcess
 from qrlib.QRDecorators import run_item
 from qrlib.QRRunItem import QRRunItem
+
 from components.DefaultComponent import DefaultComponent
+from components.GoogleDrive import DriveAPI
+from components.Database import SQLdb
+from components.OCR import GeminiOCR
+
+driveAPI=DriveAPI()
+database=SQLdb()
+ocr= GeminiOCR()
+
+
 
 class DefaultProcess(QRProcess):
     """Main process orchestration."""
@@ -16,13 +26,18 @@ class DefaultProcess(QRProcess):
 
     @run_item(is_ticket=False, post_success=False)
     def before_run(self, *args, **kwargs):
-        # Get run item created by decorator. Then notify to all components about new run item.
-        run_item: QRRunItem = kwargs["run_item"]
-        self.notify(run_item)
+        # # Get run item created by decorator. Then notify to all components about new run item.
+        # run_item: QRRunItem = kwargs["run_item"]
+        # self.notify(run_item)
 
-        self.default_component.login()
-        self.data = ["a", "b"]
-        run_item.set_success()
+        # self.default_component.login()
+        # self.data = ["a", "b"]
+        # run_item.set_success()
+        driveAPI.authenticate_credentials()
+        database.connect_db()
+        ocr.create_client()
+        
+        
 
     @run_item(is_ticket=False)
     def before_run_item(self, *args, **kwargs):
@@ -57,11 +72,17 @@ class DefaultProcess(QRProcess):
         # Get run item created by decorator. Then notify to all components about new run item.
         run_item: QRRunItem = kwargs["run_item"]
         self.notify(run_item)
+        
+        
+        
+        
         run_item.set_success()
 
     @run_item(is_ticket=False, post_success=False)
     def after_run(self, *args: Any, **kwargs: Any) -> None:
         # Get run item created by decorator. Then notify to all components about new run item.
+        
+        
         run_item: QRRunItem = kwargs["run_item"]
         self.notify(run_item)
 

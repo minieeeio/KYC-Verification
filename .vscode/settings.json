@@ -1,9 +1,9 @@
 {
   "python.analysis.extraPaths": [
-    "/Users/ujjalshrestha/Downloads/Bot Starter Kit/keywords",
-    "/Users/ujjalshrestha/Downloads/Bot Starter Kit/libraries",
-    "/Users/ujjalshrestha/Downloads/Bot Starter Kit/variables",
-    "/Users/ujjalshrestha/Downloads/Bot Starter Kit/qrlib",
-    "/Users/ujjalshrestha/Downloads/Bot Starter Kit/app"
+    "/Volumes/Ankit/Developer/Anuja/Quickfox/KYC Verfication/keywords",
+    "/Volumes/Ankit/Developer/Anuja/Quickfox/KYC Verfication/libraries",
+    "/Volumes/Ankit/Developer/Anuja/Quickfox/KYC Verfication/variables",
+    "/Volumes/Ankit/Developer/Anuja/Quickfox/KYC Verfication/qrlib",
+    "/Volumes/Ankit/Developer/Anuja/Quickfox/KYC Verfication/app"
   ]
 }

@@ -1,29 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.9.13 on darwin)" generated="20260915 15:41:25.079" rpa="true" schemaversion="4">
-<suite id="s1" name="Tasks" source="/Users/ujjalshrestha/Downloads/Bot Starter Kit/tasks.robot">
+<robot generator="Robot 7.5 (Python 3.9.13 on darwin)" generated="2026-09-17T17:32:28.220005" rpa="true" schemaversion="5">
+<suite id="s1" name="Tasks" source="/Volumes/Ankit/Developer/Anuja/Quickfox/KYC Verfication/tasks.robot">
 <test id="s1-t1" name="RPA Task" line="7">
-<kw name="Start" library="Bot">
+<kw name="Start" owner="Bot">
+<msg time="2026-09-17T17:32:30.184584" level="INFO">Please visit this URL to authorize this application: https://accounts.google.com/o/oauth2/auth?response_type=code&amp;client_id=725979822899-9hfatqp1828nqtn102etdubm251re3od.apps.googleusercontent.com&amp;redirect_uri=http%3A%2F%2Flocalhost%3A57027%2F&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive&amp;state=o86nV1bRQRVEysqR2hlrGXoykjAkNc&amp;code_challenge=-X6q3QnDPJEtig9jqPeeV9pKbUS5FG7EbgCzT5pb6Bc&amp;code_challenge_method=S256&amp;access_type=offline</msg>
+<msg time="2026-09-17T17:32:38.652982" level="INFO">"GET /?state=o86nV1bRQRVEysqR2hlrGXoykjAkNc&amp;iss=https://accounts.google.com&amp;code=4/0ATsMZqCs1eq_YzuheybYFk6RcpO1NbvWwXmd2slSs3VY6We7tWap1sj4Gn5F3prXAZM_Yw&amp;scope=https://www.googleapis.com/auth/drive HTTP/1.1" 200 65</msg>
+<msg time="2026-09-17T17:32:38.893680" level="INFO">file_cache is only supported with oauth2client&lt;4.0.0</msg>
+<msg time="2026-09-17T17:32:39.138167" level="INFO">Please visit this URL to authorize this application: https://accounts.google.com/o/oauth2/auth?response_type=code&amp;client_id=725979822899-9hfatqp1828nqtn102etdubm251re3od.apps.googleusercontent.com&amp;redirect_uri=http%3A%2F%2Flocalhost%3A57027%2F&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive&amp;state=o86nV1bRQRVEysqR2hlrGXoykjAkNc&amp;code_challenge=-X6q3QnDPJEtig9jqPeeV9pKbUS5FG7EbgCzT5pb6Bc&amp;code_challenge_method=S256&amp;access_type=offline</msg>
 <doc>Set up platform components and run the process lifecycle.</doc>
-<msg timestamp="20260915 15:41:25.451" level="INFO">Logging in...</msg>
-<msg timestamp="20260915 15:41:25.451" level="INFO">Run Item: {'started_at': '2026-09-15 15:41:25', 'completed_at': '2026-09-15 15:41:25', 'status': 'Completed', 'report_data': {}, 'is_ticket': False, 'notification': {}}</msg>
-<msg timestamp="20260915 15:41:25.451" level="INFO">Test task</msg>
-<msg timestamp="20260915 15:41:25.451" level="INFO">Run Item: {'started_at': '2026-09-15 15:41:25', 'completed_at': '2026-09-15 15:41:25', 'status': 'Completed', 'report_data': {'test': 'a'}, 'is_ticket': True, 'notification': {}}</msg>
-<msg timestamp="20260915 15:41:25.451" level="INFO">Run Item: {'started_at': '2026-09-15 15:41:25', 'completed_at': '2026-09-15 15:41:25', 'status': 'Completed', 'report_data': {}, 'is_ticket': False, 'notification': {}}</msg>
-<msg timestamp="20260915 15:41:25.451" level="INFO">Run Item: {'started_at': '2026-09-15 15:41:25', 'completed_at': '2026-09-15 15:41:25', 'status': 'Completed', 'report_data': {}, 'is_ticket': False, 'notification': {}}</msg>
-<msg timestamp="20260915 15:41:25.451" level="INFO">Test task</msg>
-<msg timestamp="20260915 15:41:25.451" level="INFO">Run Item: {'started_at': '2026-09-15 15:41:25', 'completed_at': '2026-09-15 15:41:25', 'status': 'Completed', 'report_data': {'test': 'b'}, 'is_ticket': True, 'notification': {}}</msg>
-<msg timestamp="20260915 15:41:25.451" level="INFO">Run Item: {'started_at': '2026-09-15 15:41:25', 'completed_at': '2026-09-15 15:41:25', 'status': 'Completed', 'report_data': {}, 'is_ticket': False, 'notification': {}}</msg>
-<status status="PASS" starttime="20260915 15:41:25.450" endtime="20260915 15:41:25.451"/>
+<status status="PASS" start="2026-09-17T17:32:29.975922" elapsed="9.162366"/>
 </kw>
-<kw name="Teardown" library="Bot" type="TEARDOWN">
+<kw name="Teardown" owner="Bot" type="TEARDOWN">
+<msg time="2026-09-17T17:32:39.139222" level="INFO">Logging out...</msg>
 <doc>Global teardown — always runs after start() regardless of errors.</doc>
-<msg timestamp="20260915 15:41:25.451" level="INFO">Logging out...</msg>
-<status status="PASS" starttime="20260915 15:41:25.451" endtime="20260915 15:41:25.451"/>
+<status status="PASS" start="2026-09-17T17:32:39.138866" elapsed="0.000408"/>
 </kw>
-<status status="PASS" starttime="20260915 15:41:25.450" endtime="20260915 15:41:25.452"/>
+<status status="PASS" start="2026-09-17T17:32:29.975156" elapsed="9.164169"/>
 </test>
 <doc>Template robot main suite.</doc>
-<status status="PASS" starttime="20260915 15:41:25.080" endtime="20260915 15:41:25.452"/>
+<status status="PASS" start="2026-09-17T17:32:28.221021" elapsed="10.918724"/>
 </suite>
 <statistics>
 <total>
@@ -32,9 +27,25 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Tasks">Tasks</stat>
+<stat name="Tasks" id="s1" pass="1" fail="0" skip="0">Tasks</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2026-09-17T17:32:29.970951" level="WARN">python-dotenv could not parse statement starting at line 11</msg>
+<msg time="2026-09-17T17:32:29.971072" level="WARN">python-dotenv could not parse statement starting at line 13</msg>
+<msg time="2026-09-17T17:32:29.971135" level="WARN">python-dotenv could not parse statement starting at line 14</msg>
+<msg time="2026-09-17T17:32:29.971190" level="WARN">python-dotenv could not parse statement starting at line 15</msg>
+<msg time="2026-09-17T17:32:29.971242" level="WARN">python-dotenv could not parse statement starting at line 16</msg>
+<msg time="2026-09-17T17:32:29.971294" level="WARN">python-dotenv could not parse statement starting at line 17</msg>
+<msg time="2026-09-17T17:32:29.971360" level="WARN">python-dotenv could not parse statement starting at line 20</msg>
+<msg time="2026-09-17T17:32:29.971425" level="WARN">python-dotenv could not parse statement starting at line 22</msg>
+<msg time="2026-09-17T17:32:29.972724" level="WARN">python-dotenv could not parse statement starting at line 11</msg>
+<msg time="2026-09-17T17:32:29.972793" level="WARN">python-dotenv could not parse statement starting at line 13</msg>
+<msg time="2026-09-17T17:32:29.972851" level="WARN">python-dotenv could not parse statement starting at line 14</msg>
+<msg time="2026-09-17T17:32:29.972908" level="WARN">python-dotenv could not parse statement starting at line 15</msg>
+<msg time="2026-09-17T17:32:29.972960" level="WARN">python-dotenv could not parse statement starting at line 16</msg>
+<msg time="2026-09-17T17:32:29.973010" level="WARN">python-dotenv could not parse statement starting at line 17</msg>
+<msg time="2026-09-17T17:32:29.973074" level="WARN">python-dotenv could not parse statement starting at line 20</msg>
+<msg time="2026-09-17T17:32:29.973141" level="WARN">python-dotenv could not parse statement starting at line 22</msg>
 </errors>
 </robot>

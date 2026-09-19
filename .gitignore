@@ -29,6 +29,7 @@ ENV/
 .env
 
 # Robot Framework / Robocorp artifacts
+output
 output/
 *.log
 *.xml
@@ -45,5 +46,7 @@ output/
 #Ignoring oauth credentials
 credentials.json
 
+
 #Ignoring oauth pickles
 token.pickle
+service_account_credentials.json

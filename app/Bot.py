@@ -13,6 +13,7 @@ class Bot(QRBot):
 
     def __init__(self) -> None:
         super().__init__()
+        
         self.process = DefaultProcess()
 
     def start(self) -> None:
